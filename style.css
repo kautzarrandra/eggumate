@@ -1,0 +1,134 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f6f6f6;
+  color: #333;
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.logo-img {
+  height: 36px;
+}
+.logo-text {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #2563eb;
+  margin: 0;
+}
+.container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+.fcr-section, .history-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2.5rem;
+}
+.fcr-section h2,
+.history-section h2 {
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+.fcr-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.fcr-inputs div {
+  flex: 1;
+  min-width: 220px;
+}
+.fcr-inputs label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+.fcr-inputs input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  height: 40px;         /* tambahkan ini */
+  box-sizing: border-box;
+}
+.fcr-inputs button {
+  padding: 0.5rem 1.2rem;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap;
+  line-height: 1.25;
+}
+.fcr-result span {
+  font-weight: bold;
+  color: #2563eb;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.fcr-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 0.5rem;
+  column-gap: 1rem;
+  align-items: center;
+}
+.fcr-grid div {
+  font-size: 1rem;
+}
+.fcr-grid div:nth-child(2n) {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.custom-date-wrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.custom-date-input {
+  width: 220px;
+  height: 40px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}

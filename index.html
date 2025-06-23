@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eggumate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="header">
+        <img src="Logo Eggumate.png" alt="Eggumate Logo" class="logo-img">
+    </header>
+
+    <main class="container">
+        <section class="fcr-section">
+            <h2>Feed Conversion Ratio</h2>
+            <div class="fcr-inputs">
+                <div>
+                    <label for="fcrDate">Tanggal</label>
+                    <input type="date" id="fcrDate">
+                </div>
+                <div>
+                    <label for="feedInput">Jumlah Pakan (gram)</label>
+                    <input type="number" id="feedInput">
+                </div>
+                <div>
+                    <label>&nbsp;</label> <!-- Untuk jaga agar sejajar -->
+                    <button onclick="calculateFCR()">Hitung</button>
+                </div>
+            </div>
+            <div class="fcr-result">
+                <div class="fcr-grid">
+                    <div>Total Telur</div><div id="fcrEggCount">-</div>
+                    <div>Rata-rata Berat Telur</div><div><span id="fcrAvgWeight">-</span> gram</div>
+                    <div>Hasil FCR</div><div id="fcrOutput">-</div>
+                    <div>Status</div><div id="fcrRating">-</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <h2>Data Historis Telur</h2>
+            <div class="custom-date-wrapper">
+                <div>
+                    <label for="filterDate">Tanggal</label>
+                    <input type="date" id="filterDate" class="custom-date-input" onchange="loadEggData()">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jam</th>
+                        <th>Berat Telur (gram)</th>
+                    </tr>
+                </thead>
+                <tbody id="eggTableBody">
+                    <tr>
+                        <td colspan="2">Pilih tanggal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">© 2025 Eggumate</footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
