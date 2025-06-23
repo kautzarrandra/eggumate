@@ -69,3 +69,10 @@ function calculateFCR() {
         else rating.textContent = "⚠️ Bad :( Your farm is unprofitable!";
     });
 }
+
+document.getElementById("feedInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        calculateFCR();
+    }
+});
