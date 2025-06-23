@@ -27,13 +27,13 @@ function calculateFCR() {
     const output = document.getElementById("fcrOutput");
     const rating = document.getElementById("fcrRating");
     const eggCount = document.getElementById("fcrEggCount");
-    const avgWeight = document.getElementById("fcrAvgWeight");
+    const totalWeightEgg = document.getElementById("fcrTotalWeight");
 
     if (!date || isNaN(feed)) {
         output.textContent = "Input tidak valid";
         rating.textContent = "-";
         eggCount.textContent = "-";
-        avgWeight.textContent = "-";
+        totalWeightEgg.textContent = "-";
         return;
     }
 
@@ -43,7 +43,7 @@ function calculateFCR() {
             output.textContent = "0";
             rating.textContent = "Tidak ada telur";
             eggCount.textContent = "0";
-            avgWeight.textContent = "0";
+            totalWeightEgg.textContent = "0";
             return;
         }
 
@@ -59,14 +59,13 @@ function calculateFCR() {
         });
 
         const fcr = (feed / totalWeight).toFixed(2);
-        const avg = count > 0 ? (totalWeight / count).toFixed(1) : 0;
 
         output.textContent = fcr;
         eggCount.textContent = count;
-        avgWeight.textContent = avg;
+        totalWeightEgg.textContent = totalWeight.toFixed(1);
 
-        if (fcr < 2) rating.textContent = "🥚 Egg-celent!";
-        else if (fcr < 3) rating.textContent = "👍 Good";
-        else rating.textContent = "⚠️ Bad";
+        if (fcr < 1.8) rating.textContent = "🥚 Egg-celent! Your farm is profitable!";
+        else if (fcr < 2.2) rating.textContent = "👍 Good";
+        else rating.textContent = "⚠️ Bad :( Your farm is unprofitable!";
     });
 }
